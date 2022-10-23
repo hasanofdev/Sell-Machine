@@ -3,14 +3,19 @@ using System;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using System.Data;
+using Sell_Machine.Models;
+using System.Text.Json;
 
 namespace Sell_Machine
 {
     public partial class SellMachine : Form
     {
+        List<Product> products = null!;
         double EnteredAmount { get; set; }
         double ItemPrice { get; set; }
         double Residuse { get; set; }
+
+        string CurrentItemName { get; set; }
 
         public SellMachine()
         {
@@ -29,6 +34,7 @@ namespace Sell_Machine
                 return;
 
             PaymentPanel.Enabled = true;
+            CurrentItemName = panel.Name;
 
             foreach (var control in panel.Controls)
                 if (control is Label lbl)
@@ -51,6 +57,21 @@ namespace Sell_Machine
 
         private void SellMachine_Load(object sender, EventArgs e)
         {
+            products = null!;
+            using FileStream fs = new FileStream("../../../Properties/Products.json", FileMode.Open);
+            products = System.Text.Json.JsonSerializer.Deserialize<List<Product>>(fs)!;
+
+            foreach (Control control in ItemsPanel.Controls)
+                if (control is RadioButton rb)
+                {
+                    var product = products.Find((name) => name.ProductName == (rb.Tag as Panel)!.Name);
+                    rb.Text = $"{product!.Pcs} pcs.";
+                    if (product.Pcs < 1)
+                        rb.Enabled = false;
+                }
+
+            fs.Close();
+
             EnteredAmountLbl.Text = $"Amount Entered: {EnteredAmount.ToString("0.00")} AZN";
             ResiduseLbl.Text = $"Residue: {Residuse.ToString("0.00")} AZN";
         }
@@ -79,6 +100,56 @@ namespace Sell_Machine
 
             if (EnteredAmount >= ItemPrice) FinalPaymentLabel.Enabled = true;
             else FinalPaymentLabel.Enabled = false;
+        }
+
+        private void Penny_Click(object sender, EventArgs e)
+        {
+            Button? btn = sender as Button;
+            if (string.IsNullOrWhiteSpace(EnterMoneyTb.Text)) EnterMoneyTb.Text = btn!.Tag.ToString();
+            else
+            {
+                EnterMoneyTb.Text = double.Parse(new DataTable().Compute($"{EnterMoneyTb.Text} + {btn.Tag}", null).ToString()!).ToString("0.00");
+            }
+        }
+
+        private void Purchase_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Thank You For Choosing Us!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            if (result == DialogResult.OK)
+            {
+                foreach (Control control in ItemsPanel.Controls)
+                    if (control is RadioButton rb)
+                        if (rb.Checked)
+                            products.Find((name) => name.ProductName == (rb.Tag as Panel)!.Name)!.Pcs -= 1;
+
+                WriteJsonFile(CurrentItemName);
+
+                foreach (var control in ItemsPanel.Controls)
+                    if (control is RadioButton rb)
+                        if (rb.Checked)
+                            rb.Checked = false;
+
+                PaymentPanel.Enabled = false;
+                EnterMoneyTb.Text = null;
+                EnterMoneyTb.PlaceholderText = "00.00";
+
+                CurrentItemPicture.Image = null;
+                CurrentItemPriceLabel.Text = string.Empty;
+
+
+                SellMachine_Load(null!, null!);
+            }
+        }
+
+        private void WriteJsonFile(string itemname)
+        {
+            var jsonString = JsonSerializer.Serialize(products);
+            File.WriteAllText("../../../Properties/Products.json", jsonString);
+
+            Process process = new Process(itemname, EnteredAmount, Residuse);
+            var check = JsonSerializer.Serialize(process);
+            File.WriteAllText($"../../../Properties/{Guid.NewGuid().ToString()}.json", check);
         }
     }
 }

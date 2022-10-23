@@ -84,12 +84,12 @@
             this.CurrentItemPicture = new System.Windows.Forms.PictureBox();
             this.ResiduseLbl = new System.Windows.Forms.Label();
             this.EnteredAmountLbl = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.TenManat = new System.Windows.Forms.Button();
+            this.FiveManat = new System.Windows.Forms.Button();
+            this.OneManat = new System.Windows.Forms.Button();
+            this.FiftyPenny = new System.Windows.Forms.Button();
+            this.TwentyPenny = new System.Windows.Forms.Button();
+            this.TenPenny = new System.Windows.Forms.Button();
             this.EnterMoneyTb = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.ItemsPanel.SuspendLayout();
@@ -725,12 +725,12 @@
             this.PaymentPanel.Controls.Add(this.FinalPaymentLabel);
             this.PaymentPanel.Controls.Add(this.ResiduseLbl);
             this.PaymentPanel.Controls.Add(this.EnteredAmountLbl);
-            this.PaymentPanel.Controls.Add(this.button6);
-            this.PaymentPanel.Controls.Add(this.button5);
-            this.PaymentPanel.Controls.Add(this.button4);
-            this.PaymentPanel.Controls.Add(this.button3);
-            this.PaymentPanel.Controls.Add(this.button2);
-            this.PaymentPanel.Controls.Add(this.button1);
+            this.PaymentPanel.Controls.Add(this.TenManat);
+            this.PaymentPanel.Controls.Add(this.FiveManat);
+            this.PaymentPanel.Controls.Add(this.OneManat);
+            this.PaymentPanel.Controls.Add(this.FiftyPenny);
+            this.PaymentPanel.Controls.Add(this.TwentyPenny);
+            this.PaymentPanel.Controls.Add(this.TenPenny);
             this.PaymentPanel.Controls.Add(this.EnterMoneyTb);
             this.PaymentPanel.Controls.Add(this.label13);
             this.PaymentPanel.Enabled = false;
@@ -754,12 +754,14 @@
             this.panel16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel16.Controls.Add(this.CurrentItemPriceLabel);
             this.panel16.Controls.Add(this.CurrentItemPicture);
+            this.panel16.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panel16.Location = new System.Drawing.Point(119, 46);
             this.panel16.MaximumSize = new System.Drawing.Size(75, 100);
             this.panel16.MinimumSize = new System.Drawing.Size(75, 100);
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(75, 100);
             this.panel16.TabIndex = 1;
+            this.panel16.Click += new System.EventHandler(this.Purchase_Click);
             // 
             // CurrentItemPriceLabel
             // 
@@ -770,6 +772,7 @@
             this.CurrentItemPriceLabel.Size = new System.Drawing.Size(73, 29);
             this.CurrentItemPriceLabel.TabIndex = 1;
             this.CurrentItemPriceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CurrentItemPriceLabel.Click += new System.EventHandler(this.Purchase_Click);
             // 
             // CurrentItemPicture
             // 
@@ -780,6 +783,7 @@
             this.CurrentItemPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.CurrentItemPicture.TabIndex = 0;
             this.CurrentItemPicture.TabStop = false;
+            this.CurrentItemPicture.Click += new System.EventHandler(this.Purchase_Click);
             // 
             // ResiduseLbl
             // 
@@ -801,101 +805,113 @@
             this.EnteredAmountLbl.TabIndex = 8;
             this.EnteredAmountLbl.Text = "Amount Entered: 0 AZN";
             // 
-            // button6
+            // TenManat
             // 
-            this.button6.BackColor = System.Drawing.Color.Transparent;
-            this.button6.BackgroundImage = global::Sell_Machine.Properties.Resources.Manat10;
-            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Location = new System.Drawing.Point(237, 145);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 75);
-            this.button6.TabIndex = 7;
-            this.button6.UseVisualStyleBackColor = false;
+            this.TenManat.BackColor = System.Drawing.Color.Transparent;
+            this.TenManat.BackgroundImage = global::Sell_Machine.Properties.Resources.Manat10;
+            this.TenManat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.TenManat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.TenManat.FlatAppearance.BorderSize = 0;
+            this.TenManat.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.TenManat.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.TenManat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TenManat.Location = new System.Drawing.Point(237, 145);
+            this.TenManat.Name = "TenManat";
+            this.TenManat.Size = new System.Drawing.Size(75, 75);
+            this.TenManat.TabIndex = 7;
+            this.TenManat.Tag = "10";
+            this.TenManat.UseVisualStyleBackColor = false;
+            this.TenManat.Click += new System.EventHandler(this.Penny_Click);
             // 
-            // button5
+            // FiveManat
             // 
-            this.button5.BackColor = System.Drawing.Color.Transparent;
-            this.button5.BackgroundImage = global::Sell_Machine.Properties.Resources.Manat5;
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Location = new System.Drawing.Point(120, 145);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 75);
-            this.button5.TabIndex = 6;
-            this.button5.UseVisualStyleBackColor = false;
+            this.FiveManat.BackColor = System.Drawing.Color.Transparent;
+            this.FiveManat.BackgroundImage = global::Sell_Machine.Properties.Resources.Manat5;
+            this.FiveManat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.FiveManat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.FiveManat.FlatAppearance.BorderSize = 0;
+            this.FiveManat.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.FiveManat.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.FiveManat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FiveManat.Location = new System.Drawing.Point(120, 145);
+            this.FiveManat.Name = "FiveManat";
+            this.FiveManat.Size = new System.Drawing.Size(75, 75);
+            this.FiveManat.TabIndex = 6;
+            this.FiveManat.Tag = "5";
+            this.FiveManat.UseVisualStyleBackColor = false;
+            this.FiveManat.Click += new System.EventHandler(this.Penny_Click);
             // 
-            // button4
+            // OneManat
             // 
-            this.button4.BackColor = System.Drawing.Color.Transparent;
-            this.button4.BackgroundImage = global::Sell_Machine.Properties.Resources.Manat1;
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(3, 145);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 75);
-            this.button4.TabIndex = 5;
-            this.button4.UseVisualStyleBackColor = false;
+            this.OneManat.BackColor = System.Drawing.Color.Transparent;
+            this.OneManat.BackgroundImage = global::Sell_Machine.Properties.Resources.Manat1;
+            this.OneManat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.OneManat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.OneManat.FlatAppearance.BorderSize = 0;
+            this.OneManat.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.OneManat.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.OneManat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.OneManat.Location = new System.Drawing.Point(3, 145);
+            this.OneManat.Name = "OneManat";
+            this.OneManat.Size = new System.Drawing.Size(75, 75);
+            this.OneManat.TabIndex = 5;
+            this.OneManat.Tag = "1";
+            this.OneManat.UseVisualStyleBackColor = false;
+            this.OneManat.Click += new System.EventHandler(this.Penny_Click);
             // 
-            // button3
+            // FiftyPenny
             // 
-            this.button3.BackColor = System.Drawing.Color.Transparent;
-            this.button3.BackgroundImage = global::Sell_Machine.Properties.Resources.Qepik50;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(237, 55);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 75);
-            this.button3.TabIndex = 4;
-            this.button3.UseVisualStyleBackColor = false;
+            this.FiftyPenny.BackColor = System.Drawing.Color.Transparent;
+            this.FiftyPenny.BackgroundImage = global::Sell_Machine.Properties.Resources.Qepik50;
+            this.FiftyPenny.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.FiftyPenny.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.FiftyPenny.FlatAppearance.BorderSize = 0;
+            this.FiftyPenny.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.FiftyPenny.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.FiftyPenny.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FiftyPenny.Location = new System.Drawing.Point(237, 55);
+            this.FiftyPenny.Name = "FiftyPenny";
+            this.FiftyPenny.Size = new System.Drawing.Size(75, 75);
+            this.FiftyPenny.TabIndex = 4;
+            this.FiftyPenny.Tag = "0.50";
+            this.FiftyPenny.UseVisualStyleBackColor = false;
+            this.FiftyPenny.Click += new System.EventHandler(this.Penny_Click);
             // 
-            // button2
+            // TwentyPenny
             // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.BackgroundImage = global::Sell_Machine.Properties.Resources.Qepik201;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(120, 55);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 75);
-            this.button2.TabIndex = 3;
-            this.button2.UseVisualStyleBackColor = false;
+            this.TwentyPenny.BackColor = System.Drawing.Color.Transparent;
+            this.TwentyPenny.BackgroundImage = global::Sell_Machine.Properties.Resources.Qepik201;
+            this.TwentyPenny.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.TwentyPenny.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.TwentyPenny.FlatAppearance.BorderSize = 0;
+            this.TwentyPenny.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.TwentyPenny.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.TwentyPenny.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TwentyPenny.Location = new System.Drawing.Point(120, 55);
+            this.TwentyPenny.Name = "TwentyPenny";
+            this.TwentyPenny.Size = new System.Drawing.Size(75, 75);
+            this.TwentyPenny.TabIndex = 3;
+            this.TwentyPenny.Tag = "0.20";
+            this.TwentyPenny.UseVisualStyleBackColor = false;
+            this.TwentyPenny.Click += new System.EventHandler(this.Penny_Click);
             // 
-            // button1
+            // TenPenny
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImage = global::Sell_Machine.Properties.Resources.Qepik10;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(3, 55);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 75);
-            this.button1.TabIndex = 2;
-            this.button1.UseVisualStyleBackColor = false;
+            this.TenPenny.BackColor = System.Drawing.Color.Transparent;
+            this.TenPenny.BackgroundImage = global::Sell_Machine.Properties.Resources.Qepik10;
+            this.TenPenny.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.TenPenny.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.TenPenny.FlatAppearance.BorderSize = 0;
+            this.TenPenny.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.TenPenny.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.TenPenny.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TenPenny.Location = new System.Drawing.Point(3, 55);
+            this.TenPenny.Name = "TenPenny";
+            this.TenPenny.Size = new System.Drawing.Size(75, 75);
+            this.TenPenny.TabIndex = 2;
+            this.TenPenny.Tag = "0.10";
+            this.TenPenny.UseVisualStyleBackColor = false;
+            this.TenPenny.Click += new System.EventHandler(this.Penny_Click);
             // 
             // EnterMoneyTb
             // 
@@ -990,12 +1006,12 @@
         private Label label9;
         private Label label8;
         private Label label1;
-        private Button button6;
-        private Button button5;
-        private Button button4;
-        private Button button3;
-        private Button button2;
-        private Button button1;
+        private Button TenManat;
+        private Button FiveManat;
+        private Button OneManat;
+        private Button FiftyPenny;
+        private Button TwentyPenny;
+        private Button TenPenny;
         private TextBox EnterMoneyTb;
         private Label label13;
         private Label ResiduseLbl;
