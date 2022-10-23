@@ -78,11 +78,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PaymentPanel = new System.Windows.Forms.Panel();
-            this.panel15 = new System.Windows.Forms.Panel();
+            this.FinalPaymentLabel = new System.Windows.Forms.Panel();
             this.panel16 = new System.Windows.Forms.Panel();
             this.CurrentItemPriceLabel = new System.Windows.Forms.Label();
             this.CurrentItemPicture = new System.Windows.Forms.PictureBox();
-            this.ResidueAmountLbl = new System.Windows.Forms.Label();
+            this.ResiduseLbl = new System.Windows.Forms.Label();
             this.EnteredAmountLbl = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -90,7 +90,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.EnterMoneyTb = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.ItemsPanel.SuspendLayout();
             this.PopCorn.SuspendLayout();
@@ -118,7 +118,7 @@
             this.CocoCola.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PaymentPanel.SuspendLayout();
-            this.panel15.SuspendLayout();
+            this.FinalPaymentLabel.SuspendLayout();
             this.panel16.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CurrentItemPicture)).BeginInit();
             this.SuspendLayout();
@@ -173,6 +173,7 @@
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(73, 29);
             this.label12.TabIndex = 2;
+            this.label12.Tag = "0.4";
             this.label12.Text = "0.40 AZN";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -219,6 +220,7 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(73, 29);
             this.label8.TabIndex = 2;
+            this.label8.Tag = "0.7";
             this.label8.Text = "0.70 AZN";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -278,6 +280,7 @@
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(73, 29);
             this.label11.TabIndex = 2;
+            this.label11.Tag = "1.8";
             this.label11.Text = "1.8 AZN";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -324,6 +327,7 @@
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(73, 29);
             this.label10.TabIndex = 2;
+            this.label10.Tag = "1.5";
             this.label10.Text = "1.50 AZN";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -370,6 +374,7 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(73, 29);
             this.label9.TabIndex = 2;
+            this.label9.Tag = "2";
             this.label9.Text = "2 AZN";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -403,6 +408,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(73, 29);
             this.label6.TabIndex = 2;
+            this.label6.Tag = "0.7";
             this.label6.Text = "0.70 AZN";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -450,6 +456,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(73, 29);
             this.label7.TabIndex = 2;
+            this.label7.Tag = "0.7";
             this.label7.Text = "0.70 AZN";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -509,6 +516,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(73, 29);
             this.label5.TabIndex = 2;
+            this.label5.Tag = "0.7";
             this.label5.Text = "0.70 AZN";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -555,6 +563,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(73, 29);
             this.label4.TabIndex = 2;
+            this.label4.Tag = "1.2";
             this.label4.Text = "1.20 AZN";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -601,6 +610,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 29);
             this.label3.TabIndex = 2;
+            this.label3.Tag = "1";
             this.label3.Text = "1 AZN";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -647,6 +657,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(73, 29);
             this.label2.TabIndex = 2;
+            this.label2.Tag = "1";
             this.label2.Text = "1 AZN";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -693,6 +704,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 29);
             this.label1.TabIndex = 1;
+            this.label1.Tag = "1";
             this.label1.Text = "1 AZN";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -710,8 +722,8 @@
             // 
             // PaymentPanel
             // 
-            this.PaymentPanel.Controls.Add(this.panel15);
-            this.PaymentPanel.Controls.Add(this.ResidueAmountLbl);
+            this.PaymentPanel.Controls.Add(this.FinalPaymentLabel);
+            this.PaymentPanel.Controls.Add(this.ResiduseLbl);
             this.PaymentPanel.Controls.Add(this.EnteredAmountLbl);
             this.PaymentPanel.Controls.Add(this.button6);
             this.PaymentPanel.Controls.Add(this.button5);
@@ -719,7 +731,7 @@
             this.PaymentPanel.Controls.Add(this.button3);
             this.PaymentPanel.Controls.Add(this.button2);
             this.PaymentPanel.Controls.Add(this.button1);
-            this.PaymentPanel.Controls.Add(this.textBox1);
+            this.PaymentPanel.Controls.Add(this.EnterMoneyTb);
             this.PaymentPanel.Controls.Add(this.label13);
             this.PaymentPanel.Enabled = false;
             this.PaymentPanel.Location = new System.Drawing.Point(481, 12);
@@ -727,15 +739,15 @@
             this.PaymentPanel.Size = new System.Drawing.Size(317, 454);
             this.PaymentPanel.TabIndex = 1;
             // 
-            // panel15
+            // FinalPaymentLabel
             // 
-            this.panel15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel15.Controls.Add(this.panel16);
-            this.panel15.Enabled = false;
-            this.panel15.Location = new System.Drawing.Point(0, 304);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(317, 147);
-            this.panel15.TabIndex = 10;
+            this.FinalPaymentLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.FinalPaymentLabel.Controls.Add(this.panel16);
+            this.FinalPaymentLabel.Enabled = false;
+            this.FinalPaymentLabel.Location = new System.Drawing.Point(0, 304);
+            this.FinalPaymentLabel.Name = "FinalPaymentLabel";
+            this.FinalPaymentLabel.Size = new System.Drawing.Size(317, 147);
+            this.FinalPaymentLabel.TabIndex = 10;
             // 
             // panel16
             // 
@@ -769,15 +781,15 @@
             this.CurrentItemPicture.TabIndex = 0;
             this.CurrentItemPicture.TabStop = false;
             // 
-            // ResidueAmountLbl
+            // ResiduseLbl
             // 
-            this.ResidueAmountLbl.AutoSize = true;
-            this.ResidueAmountLbl.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ResidueAmountLbl.Location = new System.Drawing.Point(3, 266);
-            this.ResidueAmountLbl.Name = "ResidueAmountLbl";
-            this.ResidueAmountLbl.Size = new System.Drawing.Size(102, 17);
-            this.ResidueAmountLbl.TabIndex = 9;
-            this.ResidueAmountLbl.Text = "Residue: 0 AZN";
+            this.ResiduseLbl.AutoSize = true;
+            this.ResiduseLbl.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ResiduseLbl.Location = new System.Drawing.Point(3, 266);
+            this.ResiduseLbl.Name = "ResiduseLbl";
+            this.ResiduseLbl.Size = new System.Drawing.Size(102, 17);
+            this.ResiduseLbl.TabIndex = 9;
+            this.ResiduseLbl.Text = "Residue: 0 AZN";
             // 
             // EnteredAmountLbl
             // 
@@ -885,14 +897,15 @@
             this.button1.TabIndex = 2;
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // textBox1
+            // EnterMoneyTb
             // 
-            this.textBox1.Location = new System.Drawing.Point(0, 26);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PlaceholderText = "00.00";
-            this.textBox1.Size = new System.Drawing.Size(317, 23);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.EnterMoneyTb.Location = new System.Drawing.Point(0, 26);
+            this.EnterMoneyTb.Name = "EnterMoneyTb";
+            this.EnterMoneyTb.PlaceholderText = "00.00";
+            this.EnterMoneyTb.Size = new System.Drawing.Size(317, 23);
+            this.EnterMoneyTb.TabIndex = 1;
+            this.EnterMoneyTb.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.EnterMoneyTb.TextChanged += new System.EventHandler(this.EnterMoneyTb_TextChanged);
             // 
             // label13
             // 
@@ -913,6 +926,7 @@
             this.Controls.Add(this.ItemsPanel);
             this.Name = "SellMachine";
             this.Text = "Sell Machine";
+            this.Load += new System.EventHandler(this.SellMachine_Load);
             this.SizeChanged += new System.EventHandler(this.SellMachine_SizeChanged);
             this.ItemsPanel.ResumeLayout(false);
             this.PopCorn.ResumeLayout(false);
@@ -941,7 +955,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.PaymentPanel.ResumeLayout(false);
             this.PaymentPanel.PerformLayout();
-            this.panel15.ResumeLayout(false);
+            this.FinalPaymentLabel.ResumeLayout(false);
             this.panel16.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.CurrentItemPicture)).EndInit();
             this.ResumeLayout(false);
@@ -982,11 +996,11 @@
         private Button button3;
         private Button button2;
         private Button button1;
-        private TextBox textBox1;
+        private TextBox EnterMoneyTb;
         private Label label13;
-        private Label ResidueAmountLbl;
+        private Label ResiduseLbl;
         private Label EnteredAmountLbl;
-        private Panel panel15;
+        private Panel FinalPaymentLabel;
         private Panel PopCorn;
         private Panel Mars;
         private Panel IceTea;
